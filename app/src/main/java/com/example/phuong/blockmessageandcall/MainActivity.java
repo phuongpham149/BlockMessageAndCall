@@ -6,10 +6,9 @@ import android.content.pm.PackageManager;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     Marker marker;
     private Button mBtnClick;
     private ProgressDialog mProgress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             marker = map
                     .addMarker(new MarkerOptions()
                             .position(myLatLng)
-                            .title("you are here")
+                            .title(getResources().getString(R.string.message))
                             .icon(BitmapDescriptorFactory
                                     .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
             map.animateCamera(CameraUpdateFactory
@@ -96,17 +96,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         } else {
             Toast.makeText(
                     getApplicationContext(),
-                    "Please make sure you turned on location from setting, \n"
-                            + "if so please wait few more sec and click again.",
+                    getResources().getString(R.string.settings),
                     Toast.LENGTH_LONG).show();
         }
     }
 
     private void showProgressBar() {
-                mProgress = new ProgressDialog(this);
-                mProgress.setTitle("Map Loading ...");
-                mProgress.setMessage("Please wait...");
-                mProgress.setCancelable(false);
-                mProgress.show();
-           }
+        mProgress = new ProgressDialog(this);
+        mProgress.setTitle("Map Loading ...");
+        mProgress.setMessage("Please wait...");
+        mProgress.setCancelable(false);
+        mProgress.show();
+    }
 }

@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">BlockMessageAndCall</string>
     <string name="key_api">	AIzaSyCoLVezY_QpII54MMVr-mLojSm8p1NljUw</string>
+    <string name="message">you are here</string>
+    <string name="settings">Please make sure you turned on location from setting,if so please wait few more sec and click again.</string>
 </resources>
