@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BlockMessageAndCall</string>
+    <string name="btn_zoom">zoom</string>
+    <string name="btn_clockwise">clockwise</string>
+    <string name="btn_fade">fade</string>
+    <string name="btn_blink">blink</string>
+    <string name="btn_move">move</string>
+    <string name="btn_slide">slide</string>
 </resources>
