@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+def AAVersion = '4.0.0'
 
 android {
     compileSdkVersion 25
@@ -26,4 +28,20 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:25.0.0'
     testCompile 'junit:junit:4.12'
+
+    // AndroidAnnotations
+    compile 'com.android.support:support-annotations:24.0.0'
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+
+    // RecyclerView
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+
+    // Lombok
+    provided "org.projectlombok:lombok:1.12.6"
+
+    //desgin
+    compile 'com.android.support:design:25.0.0'
+
+    compile 'com.github.satyan:sugar:1.4'
 }
